@@ -377,6 +377,23 @@ class Inventory:
         return True
 
     @staticmethod
+    def get_container_slot_count() -> int:
+        """
+        Gets the size of the currently open container.
+        Returns:
+            int: The number of slots of the currently open container if one is open, -1 if not.
+        """
+        screen = mc.screen
+        if screen is None:
+            return False
+
+        container_menu = screen.getMenu()
+        try:
+            return container_menu.getContainer().getContainerSize()
+        except Exception:
+            return -1
+
+    @staticmethod
     def shift_click_slot(slot: int) -> bool:
         """
         Simulates a shift-click action on a specified inventory slot in the current screen.
