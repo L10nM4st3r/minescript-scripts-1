@@ -91,6 +91,14 @@ If you need to access the player's main inventory or hotbar with an open contain
   *Returns:* Slot ID or `None` if not found. \
   <u>Note</u>: This feature use [**lib_nbt**](https://minescript.net/sdm_downloads/lib_nbt-v1/).
 
+- **get_container_slot_count() -> int**  
+   Gets the size of the currently open container.
+  *Returns:* The number of slots of the currently open container if one is open, `-1` if no container is open.
+
+- **get_lore(item: ItemStack=None) -> str | None**  
+   Gets the lore text of the specified item.
+  *Returns:* The lore of the item, or None if it doesn't have any.
+
 **Example:**
 ```python
 from minescript_plus import Inventory
