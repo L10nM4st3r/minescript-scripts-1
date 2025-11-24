@@ -381,7 +381,7 @@ class Inventory:
         """
         Gets the size of the currently open container.
         Returns:
-            int: The number of slots of the currently open container if one is open, -1 if not.
+            int: The number of slots of the currently open container if one is open, `-1` if no container is open.
         """
         screen = mc.screen
         if screen is None:
@@ -559,6 +559,15 @@ class Inventory:
 
     @staticmethod
     def get_lore(item: ItemStack=None) -> str | None:
+        """
+        Gets the lore text of the specified item.
+
+        Args:
+            item (ItemStack): The item to get the lore from.
+
+        Returns:
+            str | None: The lore of the item, or None if it doesn't have any.
+        """
         if item is None:
             item = player_hand_items().main_hand
         if item is not None:
